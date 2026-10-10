@@ -1,0 +1,39 @@
+
+<div class="heading">
+  <nav>
+<span class="heading">{{myDate | date: 'cccc | dd LLLL'}}</span>     
+<span>
+    <a class="aaa" href="https://watchsync.radpour.dev/" >Check out WatchSync!</a>
+</span>
+  </nav>
+</div>
+
+<h2>Todays prompt:</h2>
+
+<img #lala class="lala" src="Lala.png" alt="aaaa">
+
+
+
+@if(myDate.getMonth() == 9){
+    <h1>{{prompts[dateDay].title}}</h1>
+} @else{
+    <h1>Its not even October yet</h1>
+}
+
+<div class="calendar">
+    @for(prompt of prompts; track $index){
+        @if(prompt.id == dateDay && myDate.getMonth() == 9){  
+        <div class="calendar__item_waow">
+            <div class="calendar__item__date">{{prompt.id + 1}}</div>
+            <div class="calendar__item__title"> {{prompt.title}}</div>
+        </div>
+        } @else {
+
+            <div class="calendar__item">
+                <div class="calendar__item__date">{{prompt.id + 1}}</div>
+                <div class="calendar__item__title"> {{prompt.title}}</div>
+            </div>
+        }
+    }
+</div>
+
